@@ -1,0 +1,33 @@
+.checkbox-tree-header {
+  font-size: $tree-header-font-size;
+
+  > .checkbox-inner {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 8px 35px 8px 20px;
+
+    > .checkbox-wrapper {
+      margin-right: 10px;
+      font-size: $icon-font-size;
+      width: $icon-size;
+      min-width: $icon-size;
+      height: $icon-size;
+      line-height: $icon-size;
+      text-align: center;
+      display: inline-block;
+
+      .checkbox-container {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}

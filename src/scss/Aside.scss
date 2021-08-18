@@ -1,0 +1,79 @@
+.aside {
+  color: $aside-color;
+  height: 100%;
+  width: $aside-width;
+  min-width: $aside-width;
+  text-align: left;
+  transition: width, left, right, 0.3s;
+  position: relative;
+  z-index: 1009;
+
+  > .aside-inner {
+    background: $aside-bg-color;
+    height: 100%;
+    position: relative;
+    z-index: 101;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      opacity: 0.3;
+      left: 0;
+      top: 0;
+      z-index: 100;
+    }
+
+    > .aside-layout {
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      z-index: 101;
+    }
+  }
+
+  > .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(#000, 0.3);
+    z-index: 100;
+    display: none;
+  }
+
+  header {
+    padding: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba($aside-color, 0.2);
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px 24px;
+    border-top: 1px solid rgba($aside-color, 0.2);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    position: fixed;
+    left: -$aside-width;
+    &.toggled {
+      left: 0;
+      .overlay {
+        display: block;
+      }
+    }
+  }
+}
